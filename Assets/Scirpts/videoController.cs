@@ -10,14 +10,17 @@ public class videoController : MonoBehaviour
     UnityEngine.Video.VideoPlayer player;
     public GameObject videoPlayerButtonContainer;
     public UnityEngine.UI.Button showVideoButton;
-    public GameObject ImageTraget;
-    public static GameObject model;
+    public UnityEngine.UI.Button threeD_Button;
+    public string modelPath;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
         videoPlayer.SetActive(false);
         videoPlayerButtonContainer.SetActive(false);    
         showVideoButton.gameObject.SetActive(false);
+        threeD_Button.gameObject.SetActive(false); 
         player = videoPlayer.GetComponent<UnityEngine.Video.VideoPlayer>();
         
 
@@ -55,26 +58,21 @@ public class videoController : MonoBehaviour
         videoPlayer.SetActive(false);
         showVideoButton.gameObject.SetActive(false);
         videoPlayerButtonContainer.SetActive(false);
+        threeD_Button.gameObject.SetActive(false);
         player.Stop();
     }
 
     public void ontragetFound()
     {
         showVideoButton.gameObject.SetActive(true);
-
+        threeD_Button.gameObject.SetActive(true);
     }
 
-    public void on3DClicked(bool status)
+    public void ThreeD_Mode()
     {
-        if (!status)
-        {
-            Debug.LogError("Must be running: = " + ImageTraget);
-            model = ImageTraget.transform.GetChild(0).gameObject;
-
-            SceneManager.LoadScene(1);    
-            
-        }            
-        else
-            SceneManager.LoadScene(0);
+                
+        SceneManager.LoadScene(1);
+        NotDestroyGameObj.path = modelPath;
     }
+
 }
