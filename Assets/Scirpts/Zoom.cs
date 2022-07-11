@@ -45,9 +45,9 @@ public class Zoom : MonoBehaviour
 
     void zoom(float increment)
     {
-        Debug.Log(increment);
+      //  Debug.Log(increment);
         mainCamera.orthographicSize = Mathf.Clamp(mainCamera.orthographicSize - increment, zoomOutMin, zoomOutMax);
         mainCamera.orthographic = true;
-        Debug.Log(mainCamera.orthographicSize);
+      //  Debug.Log(mainCamera.orthographicSize);
     }
 }

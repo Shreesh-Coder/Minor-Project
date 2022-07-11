@@ -17,10 +17,6 @@ public class ThreeD_Viewer : MonoBehaviour
         
     }
 
-    void Update()
-    {
-        
-    }
 
     private UnityEngine.Object LoadPrefabFromFile(string filename)
     {
